@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	angular.module('wave2us', ['ngRoute', 'ngMaterial', 'wave2us.home'])
+	angular.module('wave2us', ['ngRoute', 'ngMaterial', 'wave2us.home', 'wave2us.login'])
 
 	.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
 		  $locationProvider.hashPrefix('!');

@@ -14,7 +14,7 @@
 
     .controller('RegisterCtrl', function ($scope) {
         $scope.user = {};
-        $scope.SignIn = function () {
+        $scope.Register = function () {
             var email = $scope.user.email;
             var password = $scope.user.password;
             firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {

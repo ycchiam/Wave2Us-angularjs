@@ -14,15 +14,14 @@
     var db = firebase.database();
     var auth = firebase.auth();
 
-    // Shared
-    var activeUser = {
-        email: null,
-        displayName: null,
-        show: false
-    };
-
-    angular.module('wave2us', ['ngRoute', 'ngMaterial', 'wave2us.home', 'wave2us.login', 'wave2us.register'])
-
+    angular.module('wave2us', ['ngRoute', 'ngMaterial', 'firebase', 'wave2us.home', 'wave2us.login', 'wave2us.register', 'wave2us.profile'])
+    
+	.factory("Auth", ["$firebaseAuth",
+	  function($firebaseAuth) {
+	    return $firebaseAuth();
+	  }
+	])
+    
     .config(function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
         $routeProvider.otherwise({
@@ -30,20 +29,14 @@
         });
     })
 
-    .controller('IndexCtrl', function ($scope) {
+    .controller('IndexCtrl', function ($scope, $rootScope, Auth) {
         $scope.currentNavItem = window.location.href.split('#!/')[1];
 
-        $scope.activeUser = activeUser;
-        auth.onAuthStateChanged(function (user) {
-            if (user) {
-                // User is signed in.
-                $scope.activeUser.show = true;
-            } else {
-                // No user is signed in.
-                $scope.activeUser.show = false;
-            }
-            $scope.$apply();
-            console.log("User logged in: " + $scope.activeUser.show);
+        $scope.auth = Auth;
+
+        $scope.auth.$onAuthStateChanged(function(firebaseUser) {
+        	$rootScope.firebaseUser = firebaseUser;
+        	console.log('Logged in user: ' + firebaseUser.email);
         });
 
         $scope.logout = function () {
@@ -56,6 +49,4 @@
             $mdOpenMenu(ev);
         };
     })
-
-
 })();

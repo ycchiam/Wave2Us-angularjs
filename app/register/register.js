@@ -2,7 +2,7 @@
     'use strict';
     angular.module('wave2us.register', ['ngRoute', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 
-    .config(function ($routeProvider, $mdThemingProvider) {
+    .config(['$routeProvider', '$mdThemingProvider', function ($routeProvider, $mdThemingProvider) {
         $routeProvider.when('/register', {
             templateUrl: 'register/register.html',
             controller: 'RegisterCtrl'
@@ -10,9 +10,9 @@
         $mdThemingProvider.theme('docs-dark', 'default')
             .primaryPalette('yellow')
             .dark();
-    })
+    }])
 
-    .controller('RegisterCtrl', function ($scope) {
+    .controller('RegisterCtrl', ['$scope', function ($scope) {
         $scope.user = {};
         $scope.Register = function () {
             var email = $scope.user.email;
@@ -24,6 +24,6 @@
                 console.log(errorCode);
             });
         };
-    });
+    }]);
 
 })();

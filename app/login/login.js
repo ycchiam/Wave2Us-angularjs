@@ -2,7 +2,7 @@
     'use strict';
     angular.module('wave2us.login', ['ngRoute', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 
-    .config(function ($routeProvider, $mdThemingProvider) {
+    .config(['$routeProvider', '$mdThemingProvider', function ($routeProvider, $mdThemingProvider) {
         $routeProvider.when('/login', {
             templateUrl: 'login/login.html',
             controller: 'LoginCtrl'
@@ -10,9 +10,9 @@
         $mdThemingProvider.theme('docs-dark', 'default')
             .primaryPalette('yellow')
             .dark();
-    })
+    }])
 
-    .controller('LoginCtrl', function ($scope) {
+    .controller('LoginCtrl', ['$scope', function ($scope) {
         $scope.user = {};
         $scope.SignIn = function () {
             var email = $scope.user.email;
@@ -24,6 +24,6 @@
                 console.log(errorCode);
             });
         };
-    });
+    }]);
 
 })();

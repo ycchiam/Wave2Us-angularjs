@@ -2,20 +2,35 @@
     'use strict';
     angular.module('wave2us.profile', ['ngRoute', 'ngMaterial', 'firebase', 'ngMessages', 'material.svgAssetsCache'])
 
-    .config(function ($routeProvider, $mdThemingProvider) {
+    .config(["$routeProvider", '$mdThemingProvider', function ($routeProvider, $mdThemingProvider) {
         $routeProvider.when('/profile', {
+            controller: 'ProfileCtrl',
             templateUrl: 'profile/profile.html',
-            controller: 'ProfileCtrl'
+            resolve: {
+                'currentAuth': ['Auth', function (Auth) {
+                    console.log(Auth);
+                    return Auth.$requireSignIn();
+                }]
+            }
         });
+
         $mdThemingProvider.theme('docs-dark', 'default')
             .primaryPalette('yellow')
             .dark();
-    })
+    }])
 
-    .controller('ProfileCtrl', function ($scope, $rootScope) {
-    	$scope.user= {};
-    	console.log($rootScope.firebaseUser);
-//    	$scope.user.email = $rootScope.firebaseUser.email;
-    });
+    .controller('ProfileCtrl', ['$scope', 'currentAuth', function ($scope, currentAuth) {
+        $scope.user = {};
+        $scope.user.displayName = currentAuth.displayName;
 
+        $scope.UpdateProfile = function () {
+            currentAuth.updateProfile({
+                displayName: $scope.user.displayName
+            }).then(function () {
+                console.log('Update Successful');
+            }, function (error) {
+                console.log('Update Failed');
+            });
+        };
+    }]);
 })();

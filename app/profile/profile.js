@@ -1,3 +1,5 @@
+/*global console*/
+
 (function () {
     'use strict';
     angular.module('wave2us.profile', ['ngRoute', 'ngMaterial', 'firebase', 'ngMessages', 'material.svgAssetsCache'])
@@ -8,7 +10,6 @@
             templateUrl: 'profile/profile.html',
             resolve: {
                 'currentAuth': ['Auth', function (Auth) {
-                    console.log(Auth);
                     return Auth.$requireSignIn();
                 }]
             }
@@ -31,6 +32,7 @@
             }, function (error) {
                 console.log('Update Failed');
             });
+            console.log(currentAuth);
         };
     }]);
 })();

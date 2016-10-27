@@ -1,3 +1,5 @@
+/*global firebase, window*/
+
 (function () {
     'use strict';
 
@@ -32,11 +34,15 @@
         });
     }])
 
-    .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    .config(['$locationProvider', '$routeProvider', '$mdThemingProvider', function ($locationProvider, $routeProvider, $mdThemingProvider) {
         $locationProvider.hashPrefix('!');
         $routeProvider.otherwise({
             redirectTo: '/home'
         });
+
+        $mdThemingProvider.theme('default')
+            .primaryPalette('pink')
+            .accentPalette('blue');
     }])
 
     .controller('IndexCtrl', ['$scope', '$rootScope', 'Auth', function ($scope, $rootScope, Auth) {

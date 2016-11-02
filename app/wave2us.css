@@ -1,13 +1,11 @@
 md-nav-bar {
-	z-index: 1;
+    z-index: 1;
 }
-
 md-content .ext-content {
-	padding: 50px;
-	margin: 20px;
-	background-color: #FFF2E0;
+    padding: 50px;
+    margin: 20px;
+    background-color: #FFF2E0;
 }
-
 .bg-img {
-	background: url(http://orig11.deviantart.net/6a0a/f/2013/279/c/d/google_inspired_wallpaper_by_brebenel_silviu-d6pftbf.jpg) center center;
+    background: url(https://cdn.techjuice.pk/wp-content/uploads/2016/07/17.png) center center;
 }

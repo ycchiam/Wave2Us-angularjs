@@ -2,49 +2,73 @@
 <html>
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Angular Material style sheet -->
-	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-	<link rel="stylesheet" href="wave2us.css">
-	<title>Wave 2 Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="wave2us.css">
+    <title>Wave 2 Us</title>
 </head>
 
 <body ng-app="wave2us" ng-cloak="">
-	<div ng-controller="IndexCtrl" layout="column" layout-fill>
-		<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" md-whiteframe="1" md-colors="{background: 'default-primary'}">
-			<md-nav-item md-nav-href="#!/home" name="home"> Home </md-nav-item>
-			<span flex></span>
-			<md-nav-item md-nav-href="#!/profile" name="profile" ng-show="firebaseUser"> Profile </md-nav-item>
-			<md-nav-item md-nav-click="logout()" name="logout" ng-show="firebaseUser"> Logout </md-nav-item>
-			<md-nav-item md-nav-href="#!/register" name="register" ng-hide="firebaseUser"> Register </md-nav-item>
-			<md-nav-item md-nav-href="#!/login" name="login" ng-hide="firebaseUser"> Login </md-nav-item>
-			<!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
+    <div ng-controller="IndexCtrl" layout="column" layout-fill>
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" md-whiteframe="2" md-colors="{background: 'default-primary'}">
+            <md-nav-item md-nav-href="#!/home" name="home"> Home </md-nav-item>
+            <span flex></span>
+            <md-nav-item md-nav-href="#!/profile" name="profile" ng-show="firebaseUser"> Profile </md-nav-item>
+            <md-nav-item md-nav-click="logout()" name="logout" ng-show="firebaseUser"> Logout </md-nav-item>
+            <md-nav-item md-nav-href="#!/register" name="register" ng-hide="firebaseUser"> Register </md-nav-item>
+            <md-nav-item md-nav-href="#!/login" name="login" ng-hide="firebaseUser"> Login </md-nav-item>
+            <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
 					<md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
 					<md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
 					-->
-		</md-nav-bar>
-		<md-content flex>
-			<div ng-view></div>
-		</md-content>
-	</div>
-	<!-- Angular Material requires Angular.js Libraries -->
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
-	<script src='http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js'></script>
-	<!-- Angular Material Library -->
-	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-	<!-- Your application bootstrap  -->
-	<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
-	<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+        </md-nav-bar>
+        <md-toolbar md-whiteframe="2">
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Wave 2 Us</span>
+                </h2>
+                <span flex></span>
+                <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display" flex="50">
+                    <md-item-template>
+                        <span md-highlight-text="searchText">{{item.display}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                        No matches found.
+                    </md-not-found>
+                </md-autocomplete>
+                <span flex></span>
+                <md-button class="md-raised" aria-label="Register">
+                    Register
+                </md-button>
+                <md-button class="md-raised" aria-label="Login">
+                    Login
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-content flex>
+            <div ng-view></div>
+        </md-content>
+    </div>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+    <script src='http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js'></script>
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <!-- Your application bootstrap  -->
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 
-	<script src="index.js"></script>
-	<script src="home/home.js"></script>
-	<script src="login/login.js"></script>
-	<script src="register/register.js"></script>
-	<script src="profile/profile.js"></script>
+    <script src="index.js"></script>
+    <script src="home/home.js"></script>
+    <script src="login/login.js"></script>
+    <script src="register/register.js"></script>
+    <script src="profile/profile.js"></script>
 </body>
 
 </html>

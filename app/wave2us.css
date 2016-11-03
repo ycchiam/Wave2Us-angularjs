@@ -1,11 +1,50 @@
 md-nav-bar {
     z-index: 1;
 }
-md-content .ext-content {
+.ext-content {
     padding: 50px;
     margin: 20px;
-    background-color: #FFF2E0;
 }
 .bg-img {
     background: url(https://cdn.techjuice.pk/wp-content/uploads/2016/07/17.png) center center;
+    /*    background: url(http://www11.onrpg.com/wp-content/gallery/Firewatch/Firewatch-Forest.jpg) center center;*/
+    /*    background: url(https://sisterthompsoninjapan.files.wordpress.com/2014/03/chureito-pagoda-japan-mount-fuji-1682458-1920x10801.jpg) center center;*/
 }
+.profile-picture {
+    background: url('http://www.japanator.com/elephant/ul/13217-620x-snapshot20100124141756.jpg');
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-position: center center;
+    background-size: cover;
+}
+
+/*
+md-content {
+    background-color: transparent !important;
+}
+md-content md-tabs {
+    background: lightgreen;
+}
+md-content md-tabs md-tabs-wrapper {
+    background-color: green;
+}
+md-content h1:first-child {
+    margin-top: 0;
+}*/
+
+
+/*
+md-content {
+    background-color: transparent !important;
+}
+md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1;
+}
+md-content md-tabs md-tabs-wrapper {
+    background: white;
+}
+md-content h1:first-child {
+    margin-top: 0;
+}*/

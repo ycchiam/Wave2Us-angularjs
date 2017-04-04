@@ -1,10 +1,79 @@
-<div class="md-inline-form">
-    Profile page
-    <md-content md-theme="docs-dark" layout="column" layout-padding="">
-        <md-input-container>
-            <label>Display Name</label>
-            <input ng-model="user.displayName" type="text" />
-        </md-input-container>
-        <md-button type="submit" ng-click="UpdateProfile()">Submit</md-button>
-    </md-content>
+<div class="banner" ng-style="{'background-image':'url(https://cdn.techjuice.pk/wp-content/uploads/2016/07/17.png)'}">
+    <header layout="row">
+        <div md-whiteframe="2" class="profile-picture-banner"></div>
+        <div layout="column">
+            <div class="md-display-2">
+                {{userData.firstName}} {{userData.lastName}}
+            </div>
+            <div class="md-headline">
+                ({{user.displayName}})
+            </div>
+        </div>
+        <span flex></span>
+        <div layout="column" layout-align="center center">
+            <md-button class="md-raised" aria-label="Edit Profile" ng-click="showProfileEdit($event)"> Edit Profile </md-button>
+        </div>
+    </header>
 </div>
+<div layout="row" class="move-up">
+    <div>
+        <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="field">
+                    <md-content class="md-padding">
+                        <h1 class="md-display-2">Exploring the World</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+                    </md-content>
+                </md-tab>
+                <md-tab label="ace">
+                    <md-content class="md-padding">
+                        <h1 class="md-display-2">Becoming an Ace</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                        <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                    </md-content>
+                </md-tab>
+                <md-tab label="about">
+                    <md-content class="md-padding">
+                        <div class="textGroup">
+                            <div class="md-body-1" md-colors="{color:'primary'}">Introduction</div>
+                            <div>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</div>
+                        </div>
+                        <div class="textGroup">
+                            <div class="md-body-1" md-colors="{color:'primary'}">Gender</div>
+                            <div>Female</div>
+                        </div>
+                    </md-content>
+                </md-tab>
+                <md-tab label="connection">
+                    <md-content class="md-padding">
+                        <h1 class="md-display-2">Connections</h1>
+                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </div>
+
+    <!--
+    <div class="tab-right" md-whiteframe="1">
+        <md-tabs md-dynamic-height md-border-bottom md-no-select-click md-no-ink md-center-tabs>
+            <md-tab label="popular">
+                <md-content class="md-padding">
+                    <md-card>
+                        <img ng-src="https://a0.muscache.com/ac/pictures/ebbb24af-52d6-490c-89e9-16cc560140e8.jpg" class="md-card-image suggestion-card" alt="Los Angeles">
+                    </md-card>
+                    <md-card>
+                        <img ng-src="https://a0.muscache.com/ac/pictures/7bff51c1-3c35-47a5-a86c-5ea75ab6be6c.jpg" class="md-card-image suggestion-card" alt="Los Angeles">
+                    </md-card>
+                    <md-card>
+                        <img ng-src="https://a0.muscache.com/ac/pictures/0e2e4ace-7f04-4895-b7c6-482c99e69908.jpg" class="md-card-image suggestion-card" alt="Los Angeles">
+                    </md-card>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </div>
+-->
+
+</div>
+<div class="ext-content">something</div>

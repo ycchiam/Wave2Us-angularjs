@@ -1,11 +1,24 @@
-<div class="md-inline-form">
-    <md-content md-theme="docs-dark" layout="column" layout-padding="">
-        <md-input-container>
-            <label>Email</label>
-            <input ng-model="user.email" type="email"> </md-input-container>
-        <md-input-container>
-            <label>Password</label>
-            <input ng-model="user.password" type="password"> </md-input-container>
-        <md-button type="submit" ng-click="SignIn($scope)">Submit</md-button>
-    </md-content>
+<div class="ext-content">
+    <div layout="row" layout-align="center center">
+        <div class="md-inline-form login-form" md-whiteframe="2">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2 class="md-flex">Welcome Back</h2>
+                </div>
+            </md-toolbar>
+            <md-content layout="column" layout-padding>
+                <md-input-container>
+                    <label>Email</label>
+                    <input ng-model="user.email" type="email"> </md-input-container>
+                <md-input-container>
+                    <label>Password</label>
+                    <input ng-model="user.password" type="password"> </md-input-container>
+                <div layout="row">
+                    <md-button type="submit" ng-click="signIn($scope)">Forgot Password</md-button>
+                    <span flex></span>
+                    <md-button class="md-raised md-accent" type="submit" ng-click="SignIn($scope)">Login</md-button>
+                </div>
+            </md-content>
+        </div>
+    </div>
 </div>

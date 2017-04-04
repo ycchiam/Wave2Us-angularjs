@@ -1,23 +1,110 @@
-md-nav-bar {
+.move-up {
+    position: relative;
     z-index: 1;
 }
+
+.banner {
+    background: url(http://demo2.xsstudios.com/content/uploads/PhotoGallery/1_25798210bf7741639b2082d283af74.png) center center;
+    background-attachment: fixed;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner>header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+    background: inherit;
+    background-attachment: fixed;
+}
+
+.banner>header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-attachment: fixed;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    transform: scale(2) translateY(20px);
+}
+
+.banner>header>* {
+    margin: 0 10px 0 10px;
+    color: white;
+    position: relative;
+    z-index: 1;
+    text-shadow: black 0px 0px 10px;
+}
+
+.banner>header>*>* {
+    margin: 0 10px 0 10px;
+}
+
+.login-form {
+    width: 500px;
+}
+
+h2 {
+    margin: 50px 0 20px 0;
+}
+
 .ext-content {
-    padding: 50px;
-    margin: 20px;
+    padding: 100px;
 }
+
 .bg-img {
-    background: url(https://cdn.techjuice.pk/wp-content/uploads/2016/07/17.png) center center;
+    /*    background: url(https://cdn.techjuice.pk/wp-content/uploads/2016/07/17.png) center center;*/
     /*    background: url(http://www11.onrpg.com/wp-content/gallery/Firewatch/Firewatch-Forest.jpg) center center;*/
-    /*    background: url(https://sisterthompsoninjapan.files.wordpress.com/2014/03/chureito-pagoda-japan-mount-fuji-1682458-1920x10801.jpg) center center;*/
+    background: url(https://lh3.googleusercontent.com/-WXRhIexM4o4/V0v8VYG2gdI/AAAAAAABq7o/j9mX3NYyU84bv9Z3NUewa3d030npS5Kog/w2560-h1098/Material-Design-8.png) center center;
 }
+
 .profile-picture {
     background: url('http://www.japanator.com/elephant/ul/13217-620x-snapshot20100124141756.jpg');
-    display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 40px;
+    height: 40px;
     background-position: center center;
     background-size: cover;
 }
+
+.profile-picture-banner {
+    background: url('http://www.japanator.com/elephant/ul/13217-620x-snapshot20100124141756.jpg');
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-size: cover;
+    border-style: solid;
+    border-width: 5px;
+    margin: 0 100px 0 0;
+}
+
+.suggestion-card {
+    width: 175px;
+    height: 250px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.tab-right {
+    height: 200px;
+    height: 500px;
+    position: relative;
+}
+
+.textGroup {
+    margin-bottom: 24px;
+}
+
+.textGroup>.md-body-1 {
+    margin-bottom: 8px;
+}
+
 
 /*
 md-content {

@@ -1,107 +1,153 @@
-<div layout="column" layout-align="top left" class="bg-img" flex="100">
-    <div layout="row" class="ext-content" flex="80">
-        <span flex></span>
+<div class="banner" ng-style="{'background-image':'http://demo2.xsstudios.com/content/uploads/PhotoGallery/1_25798210bf7741639b2082d283af74.png'}">
+    <header>
+        <h1 class="md-display-1">
+            Explore. Wave to us, and we will plan your trip.
+        </h1>
+    </header>
+</div>
+<md-tabs md-dynamic-height md-border-bottom>
+    <md-tab label="explore">
+        <md-content class="md-padding">
+            <h1 class="md-display-2">Exploring the World</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+        </md-content>
+    </md-tab>
+    <md-tab label="ace">
+        <md-content class="md-padding">
+            <h1 class="md-display-2">Becoming an Ace</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+            <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+            <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+        </md-content>
+    </md-tab>
+    <md-tab label="wave">
+        <md-content class="md-padding">
+            <h1 class="md-display-2">Getting Started</h1>
+            <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+        </md-content>
+    </md-tab>
+</md-tabs>
+<div layout="column" class="ext-content">
+    <h2>Popular</h2>
+    <div layout="row">
         <div>
-            <md-card layout="row" md-whiteframe="2">
-                <div class="profile-picture"></div>
-                <md-card-content layout="row" layout-align="space-between">
-                    <md-card-title>
-                        <md-card-title-text>
-                            <span class="md-headline">Konata Izumi</span>
-                            <span class="md-subhead">Travel to Japan with Konata.</span>
-                        </md-card-title-text>
-                    </md-card-title>
-                    <md-card-actions layout="column">
-                        <md-button class="md-icon-button" aria-label="Favorite">
-                            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+            <md-card>
+                <md-card-header>
+                    <md-card-avatar> <img class="md-user-avatar profile-picture" /> </md-card-avatar>
+                    <md-card-header-text> <span class="md-title">Izumi Konata</span> <span class="md-subhead">Tokyo, Japan</span> </md-card-header-text>
+                </md-card-header> <img ng-src="http://sleepintokyo.com/uploads/3/6/8/8/3688013/969727374_orig.jpg" height="42" width="42" class="md-card-image" alt="Tokyo">
+                <md-card-title>
+                    <md-card-title-text> <span class="md-headline">In-card mixed actions</span> <span class="md-subhead">Reversed</span> </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="start center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                    <md-card-icon-actions>
+                        <md-button class="md-icon-button" aria-label="toggle">
+                            <!--                            <md-icon md-svg-icon="md-toggle-arrow"></md-icon>-->
                         </md-button>
-                        <md-button class="md-icon-button" aria-label="Settings">
-                            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                    </md-card-icon-actions>
+                </md-card-actions>
+                <md-card-content>
+                    <p> The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well... </p>
+                </md-card-content>
+            </md-card>
+        </div>
+        <div>
+            <md-card>
+                <md-card-header>
+                    <md-card-avatar> <img class="md-user-avatar profile-picture" /> </md-card-avatar>
+                    <md-card-header-text> <span class="md-title">Izumi Konata</span> <span class="md-subhead">Tokyo, Japan</span> </md-card-header-text>
+                </md-card-header> <img ng-src="http://sleepintokyo.com/uploads/3/6/8/8/3688013/969727374_orig.jpg" height="42" width="42" class="md-card-image" alt="Tokyo">
+                <md-card-title>
+                    <md-card-title-text> <span class="md-headline">In-card mixed actions</span> <span class="md-subhead">Reversed</span> </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="start center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                    <md-card-icon-actions>
+                        <md-button class="md-icon-button" aria-label="toggle">
+                            <!--                            <md-icon md-svg-icon="md-toggle-arrow"></md-icon>-->
                         </md-button>
-                    </md-card-actions>
+                    </md-card-icon-actions>
+                </md-card-actions>
+                <md-card-content>
+                    <p> The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well... </p>
+                </md-card-content>
+            </md-card>
+        </div>
+        <div>
+            <md-card>
+                <md-card-header>
+                    <md-card-avatar> <img class="md-user-avatar profile-picture" /> </md-card-avatar>
+                    <md-card-header-text> <span class="md-title">Izumi Konata</span> <span class="md-subhead">Tokyo, Japan</span> </md-card-header-text>
+                </md-card-header> <img ng-src="http://sleepintokyo.com/uploads/3/6/8/8/3688013/969727374_orig.jpg" height="42" width="42" class="md-card-image" alt="Tokyo">
+                <md-card-title>
+                    <md-card-title-text> <span class="md-headline">In-card mixed actions</span> <span class="md-subhead">Reversed</span> </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="start center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                    <md-card-icon-actions>
+                        <md-button class="md-icon-button" aria-label="toggle">
+                            <!--                            <md-icon md-svg-icon="md-toggle-arrow"></md-icon>-->
+                        </md-button>
+                    </md-card-icon-actions>
+                </md-card-actions>
+                <md-card-content>
+                    <p> The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well... </p>
                 </md-card-content>
             </md-card>
         </div>
     </div>
+    <h2>Featured Destinations</h2>
     <div>
-        <md-content md-whiteframe="20">
-            <md-tabs md-dynamic-height md-border-bottom class="md-primary">
-                <md-tab label="collapse">
-                </md-tab>
-                <md-tab label="how it works">
-                    <md-content class="md-padding">
-                        <h1 class="md-display-2">How it Works</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
-                        <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
-                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-                    </md-content>
-                </md-tab>
-                <md-tab label="contact us">
-                    <md-content class="md-padding">
-                        <h1 class="md-display-2">Contact Us</h1>
-                        <p>Ready to start your next trip with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-                        <p>+65 8552 9584</p>
-                        <p><a href="mailto:info@wave2us.com">info@wave2us.com</a></p>
-                    </md-content>
-                </md-tab>
-            </md-tabs>
-        </md-content>
+        <div layout="row">
+            <md-card> <img ng-src="http://e-akihabara.jp/akihabara_cms/files/slide_2.jpg" class="md-card-image" alt="Washed Out">
+                <md-card-title>
+                    <md-card-title-text> <span class="md-headline">Japan</span> </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+            <md-card> <img ng-src="http://e-akihabara.jp/akihabara_cms/files/slide_2.jpg" class="md-card-image" alt="Washed Out">
+                <md-card-title>
+                    <md-card-title-text> <span class="md-headline">Japan</span> </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+            <md-card> <img ng-src="http://e-akihabara.jp/akihabara_cms/files/slide_2.jpg" class="md-card-image" alt="Washed Out">
+                <md-card-title>
+                    <md-card-title-text> <span class="md-headline">Japan</span> </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+            <md-card> <img ng-src="http://e-akihabara.jp/akihabara_cms/files/slide_2.jpg" class="md-card-image" alt="Washed Out">
+                <md-card-title>
+                    <md-card-title-text> <span class="md-headline">Japan</span> </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+            <md-card> <img ng-src="http://e-akihabara.jp/akihabara_cms/files/slide_2.jpg" class="md-card-image" alt="Washed Out">
+                <md-card-title>
+                    <md-card-title-text> <span class="md-headline">Japan</span> </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
     </div>
 </div>
-
-<!--
-<div class="container text-center">
-	<centered>
-		<h1> ACES + WAVE2US + EXPLORERS = AWESOME TRIP! </h1>
-	</centered>
-	<hr class="primary">
-	<centered>
-		<h3>
-			Where do you want to go next? </h1>
-	</centered>
-	<form class="navbar-form navbar-center" role="search">
-		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Search">
-		</div>
-		<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-		<p class="help-block">Try for example: "Sri Lanka" or "Taiwan" or "Hong Kong"</p>
-	</form>
-	<hr class="primary">
-</div>
-<div class="main" ng-controller="HomeCtrl">
-	<div class="container">
-		<div ng-repeat="info in infos" class="col-md-6">
-			<div class="thumbnail">
-				<img ng-src="{{ info.img }}" class="img-responsive" alt="">
-				<div class="portfolio-box-caption">
-					<div class="portfolio-box-caption-content">
-						<div class="project-name">
-							{{info.title}}
-						</div>
-						<div class="project-category text-faded">
-							{{info.ace}}
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 text-center">
-			<h2 class="section-heading">Let's Get In Touch!</h2>
-			<hr class="primary">
-			<p>Ready to start your next trip with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-		</div>
-		<div class="col-lg-4 col-lg-offset-2 text-center">
-			<i class="fa fa-phone fa-3x wow bounceIn"></i>
-			<p>+65 8552 9584</p>
-		</div>
-		<div class="col-lg-4 text-center">
-			<i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-			<p><a href="mailto:info@wave2us.com">info@wave2us.com</a></p>
-		</div>
-	</div>
-</div>
--->

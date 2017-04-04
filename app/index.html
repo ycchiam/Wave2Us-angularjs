@@ -13,37 +13,28 @@
 
 <body ng-app="wave2us" ng-cloak="">
     <div ng-controller="IndexCtrl" layout="column" layout-fill>
-        <md-toolbar md-whiteframe="2">
+        <md-toolbar md-whiteframe="4" md-colors="{background: 'default-background-200'}">
             <div class="md-toolbar-tools">
-                <md-button href="#!/home" aria-label="Home">
-                    Wave 2 Us
-                </md-button>
-                <span flex></span>
+                <md-button href="#!/home" aria-label="Home" class="md-icon-button">
+                    <md-icon> polymer </md-icon>
+                </md-button> <span flex></span>
                 <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display" placeholder="Where do you want to go?" flex="50">
-                    <md-item-template>
-                        <span md-highlight-text="searchText">{{item.display}}</span>
-                    </md-item-template>
-                    <md-not-found>
-                        No matches found.
-                    </md-not-found>
-                </md-autocomplete>
-                <span flex></span>
-                <md-button href="#!/profile" class="md-raised" aria-label="Profile" ng-show="firebaseUser">
-                    Profile
-                </md-button>
-                <md-button ng-click="logout()" class="md-raised" aria-label="Logout" ng-show="firebaseUser">
-                    Logout
-                </md-button>
-                <md-button href="#!/register" class="md-raised" aria-label="Register" ng-hide="firebaseUser">
-                    Register
-                </md-button>
-                <md-button href="#!/login" class="md-raised md-accent" aria-label="Login" ng-hide="firebaseUser">
-                    Login
-                </md-button>
+                    <md-item-template> <span md-highlight-text="searchText">{{item.display}}</span> </md-item-template>
+                    <md-not-found> No matches found. </md-not-found>
+                </md-autocomplete> <span flex></span>
+                <md-button href="#!/profile" class="md-raised" aria-label="Profile" ng-show="user"> Profile </md-button>
+                <md-button ng-click="logout()" class="md-raised" aria-label="Logout" ng-show="user"> Logout </md-button>
+                <md-button href="#!/register" class="md-raised" aria-label="Register" ng-hide="user"> Register </md-button>
+                <md-button href="#!/login" class="md-raised md-accent" aria-label="Login" ng-hide="user"> Login </md-button>
             </div>
         </md-toolbar>
-        <div flex layout="column">
-            <ng-view flex layout="column"></ng-view>
+        <md-content>
+            <ng-view></ng-view>
+        </md-content>
+        <md-divider></md-divider>
+        <div layout="row" class="md-padding" md-colors="{background: 'default-background-200'}">
+            <div> WAVE2US Inc. </div> <span flex></span>
+            <div> Terms & Privacy</div>
         </div>
     </div>
     <!-- Angular Material requires Angular.js Libraries -->
@@ -58,7 +49,6 @@
     <!-- Your application bootstrap  -->
     <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
-
     <script src="index.js"></script>
     <script src="home/home.js"></script>
     <script src="login/login.js"></script>
